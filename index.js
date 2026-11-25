@@ -22,39 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Contact Form Submission Handler
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thank you for reaching out! Your message has been sent.');
-      contactForm.reset();
-    });
-  }
-});document.addEventListener('DOMContentLoaded', () => {
-  // Light/Dark Theme Switcher with LocalStorage Persistence
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('portfolio-theme');
-
-  if (savedTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeToggleBtn.textContent = '☀️ Light Glass';
-  }
-
-  themeToggleBtn.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-
-    if (isDark) {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('portfolio-theme', 'light');
-      themeToggleBtn.textContent = '🌙 Dark Glass';
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('portfolio-theme', 'dark');
-      themeToggleBtn.textContent = '☀️ Light Glass';
-    }
-  });
-
   // Clickable Featured Project Cards & Lightbox Modal Handler
   const projectCards = document.querySelectorAll('.project-card');
   const modal = document.getElementById('project-modal');
